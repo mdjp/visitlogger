@@ -20,6 +20,7 @@ function logvisit(req) {
   const ipaddr = requestIp.getClientIp(req);
   const date = new Date();
   const timestamp = Math.round(date.getTime() / 1000);
+  const agent = req.headers['user-agent'];
   const visit = {
     ts: timestamp,
     uid: data.uid,
@@ -27,6 +28,7 @@ function logvisit(req) {
     value: data.value,
     campaign: data.campaign,
     ip: ipaddr,
+    uagent: agent,
     page: req.headers.referer
   };
   db.insert(visit);
@@ -52,6 +54,9 @@ app.get('/visitlogger', (req, res) => {
   res.send(config.appname);
 });
 
+app.get('/visitlogger/logvisit', (req, res) => {
+res.send("hello");
+});
 app.post('/visitlogger/logvisit', (req, res) => {
   if (validatepost(req.body)) {
     logvisit(req);

@@ -27,7 +27,7 @@
         }
 
         VisitLogger.logvisit = function(campaign, key, value) {
-            if(VisitLogger.server || VisitLogger.cookieid) {
+            if(VisitLogger.server && VisitLogger.cookieid) {
             var data = {
                 key: key,
                 value: value,

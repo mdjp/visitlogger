@@ -54,9 +54,6 @@ app.get('/visitlogger', (req, res) => {
   res.send(config.appname);
 });
 
-app.get('/visitlogger/logvisit', (req, res) => {
-res.send("hello");
-});
 app.post('/visitlogger/logvisit', (req, res) => {
   if (validatepost(req.body)) {
     logvisit(req);
@@ -65,4 +62,26 @@ app.post('/visitlogger/logvisit', (req, res) => {
     res.send('ERROR');
   }
 });
+
+app.get('/visitlogger/viewhtml', (req, res) => {
+var response = [];;
+var returnstring = "";
+db.find({}, function (err, docs) {
+docs.forEach(function(doc){
+response.push(JSON.stringify(doc) + "<br><br>");
+})
+response.forEach(function(line){
+returnstring += line;
+})
+res.send(returnstring);
+});
+});
+
+app.get('/visitlogger/viewjson', (req, res) => {
+db.find({}, function (err, docs) {
+res.send(docs);
+});
+
+});
+
 

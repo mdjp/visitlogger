@@ -3,7 +3,7 @@
 
     function initialise() {
         var VisitLogger = {};
-        VisitLogger.server = 'SERVER';
+        VisitLogger.server = 'URL';
         VisitLogger.cookie = Cookies.get('venueexplorer');
         if (!VisitLogger.cookie) {
             Cookies.set('venueexplorer', uuid(), {

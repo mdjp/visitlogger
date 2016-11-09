@@ -48,11 +48,11 @@ app.use(cors());
 
 http.createServer(app).listen(config.port);
 
-app.get('/', (req, res) => {
+app.get('/visitlogger', (req, res) => {
   res.send(config.appname);
 });
 
-app.post('/logvisit', (req, res) => {
+app.post('/visitlogger/logvisit', (req, res) => {
   if (validatepost(req.body)) {
     logvisit(req);
     res.send('OK');

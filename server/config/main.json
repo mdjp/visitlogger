@@ -1,0 +1,5 @@
+{
+"port": 8080,
+"appname": "visitlogger",
+"dbpath": "db/visitlog"
+}

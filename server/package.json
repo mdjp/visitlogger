@@ -1,0 +1,27 @@
+{
+  "name": "visitloggerclient",
+  "version": "1.0.0",
+  "description": "Simple logger for website visitors",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon app.js",
+    "lint": "node ./node_modules/eslint/bin/eslint.js app.js"
+  },
+  "author": "Matthew Paradis",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "json-load": "^1.0.1",
+    "nedb": "^1.8.0",
+    "request-ip": "^1.2.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.2.3"
+  }
+}

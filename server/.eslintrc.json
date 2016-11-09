@@ -1,0 +1,18 @@
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "strict": 0,
+        "prefer-template": 0,
+        "comma-dangle": 0
+    },
+    "globals": {
+        "it": false,
+        "describe": false,
+        "expect": false
+    }
+
+}
